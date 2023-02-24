@@ -52,6 +52,7 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="form.html" >Formulario</a></li>
         <li><a href="practicas.html" >Practicas</a></li>	
+		<li><a href="BootStrap/index.html" >DemoBootstrap</a></li>
       </ul>
     </div>
 	
@@ -61,12 +62,40 @@
 	</div>
 	
 	<div id="right-column">
-      <h2>Hobbies</h2>
-	  <iframe width="560" height="315" src="https://www.youtube.com/embed/vl5--wV_HZU"></iframe>
+		<h2>Hobbies</h2>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/ZPdk5GaIDjo" title="YouTube video player" web-share" allowfullscreen></iframe>
  	</div>
+
+	<div id="left-column">
+		<h2>JavaScript</h2>
+		<button type="button"
+		onclick="document.getElementById('demo').innerHTML = Date()">
+		Click para mostrar la fecha y hora.</button>
+		<p id="demo"></p>
+ 	</div>		  
+
+    <script>
+		//document.write("Hello Wolrd");
+		//alert("Hello Wolrd");
+		var number = 33;
+		var number2 = 10;
+		var result = number - number2;
+		//document.write(number);
+		let name = "Angel ";
+		//document.writeln("La suma del numero: " + number + " mas el numero: " + number2 + " es:" + (number + number2) );
+		//document.writeln(" La resta del numero: " + number + " mas el numero: " + number2 + " es:" + (number - number2) );
+		//alert(name);
+		
+		let tengoTrabajo = true;
+		
+		if(tengoTrabajo)
+			document.write("Actualmente tengo trabajo, gracias por visitar mi pagina Web");
+		else
+			document.write("Estoy abierto a oportunidades laborales");
+	</script>
 	  
 	<div id="footer">
-      <p>&copy; 2023 Mi CV</p>
+		<p>&copy; 2023 Mi CV</p>
     </div>
 </body>
 </html>
