@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokédex</title>	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<h1>Pokédex</h1>
+	<div id="pokemon-container">
+		<!-- Pokémons will be displayed here -->
+	</div>
+	<script>
+		// Function to retrieve information about a Pokémon
+		function getPokemon(pokemon) {
+			var url = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
+			$.get(url, function(data) {
+				// Create a card for the Pokémon and append it to the container
+				var card = "<div class='pokemon-card'>" +
+								"<img src='" + data.sprites.front_default + "' alt='" + data.name + "' />" +
+								"<h2>" + data.name + "</h2>" +
+								"<p><strong>Type:</strong> " + data.types[0].type.name + "</p>" +
+								"<p><strong>Height:</strong> " + data.height + "</p>" +
+								"<p><strong>Weight:</strong> " + data.weight + "</p>" +
+						   "</div>";
+				$("#pokemon-container").append(card);
+			});
+		}
+
+		// Get the first 3 Pokémon
+		//getPokemon(1);
+		//getPokemon(2);
+		//getPokemon(3);
+		
+		var number = Math.floor(Math.random() * 300);
+		getPokemon(number);
+	</script>
+	<style>
+		.pokemon-card {
+			display: inline-block;
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid black;
+			border-radius: 10px;
+			text-align: center;
+			background-color: #F5F5F5;
+		}
+		.pokemon-card img {
+			max-width: 100%;
+		}
+	</style>
+</body>
+</html>
